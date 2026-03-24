@@ -11,7 +11,9 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 app.use('/api/patients',     require('./routes/patients'));
 app.use('/api/doctors',      require('./routes/doctors'));
+app.use('/api/departments',  require('./routes/departments'));
 app.use('/api/appointments', require('./routes/appointments'));
+app.use('/api/beds',         require('./routes/beds'));
 app.use('/api/billing',      require('./routes/billing'));
 app.use('/api/records',      require('./routes/records'));
 
