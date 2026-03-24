@@ -193,10 +193,3 @@ export PATH=$PATH:/usr/local/mysql/bin
 `schema → procedures → triggers → views → seed`
 
 ---
-
-## 👨‍💻 Author
-
-**Prashant Shah**
-- GitHub: [@github-1703](https://github.com/github-1703)
-- LinkedIn: [Prashant Shah](https://www.linkedin.com/in/prashant-shah-695668253/)
-- Email: exam934@gmail.com
