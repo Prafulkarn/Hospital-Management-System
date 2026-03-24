@@ -78,6 +78,7 @@ CREATE TABLE billing (
     FOREIGN KEY (appt_id)    REFERENCES appointments(appt_id)
 );
 
+--trigers automatically.When a patient is added or an appointment is cancelled, the database itself records it here automatically. This is used for auditing ,tracking who did what and when.
 CREATE TABLE audit_log (
     log_id      INT AUTO_INCREMENT PRIMARY KEY,
     action      VARCHAR(100),

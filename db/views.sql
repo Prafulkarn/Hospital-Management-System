@@ -1,5 +1,7 @@
 USE hospital_db;
 
+
+-- can acess the doctor schedule using virtual table just SELECT * FROM doctor_schedule
 CREATE VIEW doctor_schedule AS
 SELECT
     d.doctor_id,
@@ -13,6 +15,8 @@ SELECT
 FROM doctors d
 JOIN appointments a ON a.doctor_id  = d.doctor_id
 JOIN patients p     ON p.patient_id = a.patient_id;
+
+
 
 CREATE VIEW patient_summary AS
 SELECT

@@ -1,6 +1,8 @@
 USE hospital_db;
 DELIMITER $$
 
+--eg CALL BookAppointment(1, 2, '2026-03-25', '10:00:00', 'Regular checkup');
+--select * from appointments;
 CREATE PROCEDURE BookAppointment(
     IN p_patient_id INT,
     IN p_doctor_id  INT,
@@ -9,6 +11,7 @@ CREATE PROCEDURE BookAppointment(
     IN p_notes      TEXT
 )
 BEGIN
+--initally conflict=0 mean doctor free cheks 
     DECLARE conflict INT;
     SELECT COUNT(*) INTO conflict
     FROM appointments
@@ -17,6 +20,7 @@ BEGIN
       AND appt_time = p_time
       AND status = 'Scheduled';
 
+--same time for both the patien
     IF conflict > 0 THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Doctor already has an appointment at this time.';

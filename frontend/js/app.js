@@ -6,6 +6,7 @@ const pageLoaders = {
   billing:      loadBilling,
 };
 
+//for sidebar
 function navigateTo(page) {
   // Update sidebar
   document.querySelectorAll('.sidebar li').forEach(li => {
